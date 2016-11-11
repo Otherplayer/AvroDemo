@@ -1,0 +1,912 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E49265E48FA2F4CA45179B544715ED /* consumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 728889AAC6040E3D375C6F59E950C71E /* consumer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07F0FBA67C210CBA34D6EAE30022C2C9 /* datum_validate.c in Sources */ = {isa = PBXBuildFile; fileRef = E928DE177DDEBE5A6BF4C6EB1D4B657D /* datum_validate.c */; };
+		0961E15BD8223F5A353BF94B9D8B5900 /* avroappend.c in Sources */ = {isa = PBXBuildFile; fileRef = A849C72589A1EEBE8F413FA87164940E /* avroappend.c */; };
+		0B5BEFE34AC57AE49C170AC141FC1769 /* dump.h in Headers */ = {isa = PBXBuildFile; fileRef = 594B489BC79B4E55DB4C532368BFC25B /* dump.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E41E155091015C32F4FDEAD92F96DF6 /* codec.c in Sources */ = {isa = PBXBuildFile; fileRef = D94FBD27A839C7EAC96B6874182FB5A2 /* codec.c */; };
+		13C997725522891E69E7BE4AAB289E66 /* resolved-reader.c in Sources */ = {isa = PBXBuildFile; fileRef = 9B6ECAEB8BABAC8F4B9EE13AE8EE77B4 /* resolved-reader.c */; };
+		145B846F2B0A1ECD7744DB57F1DA834C /* datum_write.c in Sources */ = {isa = PBXBuildFile; fileRef = C2284687D96DFF87B35ED04E032B46E3 /* datum_write.c */; };
+		15700A858349AFC632275D2C12E318A3 /* jansson_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A948B896FA7370BF0792583F2D4D527 /* jansson_private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1607F730422A6875CBCBB77DFBB11B84 /* value.c in Sources */ = {isa = PBXBuildFile; fileRef = A9D2FF256E46B9C16FB849D7E28DBD53 /* value.c */; };
+		17F1DAD95057F6BCA5F5DA4432CCB755 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = 1499BDFBF980B484517FE0D063061C56 /* io.c */; };
+		1FF74FA911DD65251C9984B60145E264 /* allocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B0998B07A54CE8AF7930A657C5D8CED /* allocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205DE5934BBCE773A382D46F262413D1 /* avro_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E696D0C6A412105FEBA4572196D327A0 /* avro_private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2076EE01DF9AD77BC505B64FA856BE86 /* datum_skip.c in Sources */ = {isa = PBXBuildFile; fileRef = DF438C5D9B0E526D4A440AA3C908CBCF /* datum_skip.c */; };
+		261FB7002336CC1C2B49CE59827DAB3C /* schema.h in Headers */ = {isa = PBXBuildFile; fileRef = C5CA95986D369C51EB11DC1FF4B124BC /* schema.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		279C5ED49C2FEF5D2CF9AA12B9D5743F /* utf.c in Sources */ = {isa = PBXBuildFile; fileRef = 69C39ECE7741D7ED58D907D5B9F8B6F4 /* utf.c */; };
+		2EFE367ACEA350EE4DBD442CBB36C1EE /* dump.c in Sources */ = {isa = PBXBuildFile; fileRef = 79EEA50227D52A02EB451C5E80590B81 /* dump.c */; };
+		2FDB65834BB586D5287CCFFB4181CACB /* avrocat.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C50DB36D6D4119C1A9A2E38774FABED /* avrocat.c */; };
+		318185F0D2C41EF316B3415EBB66E3C7 /* jansson.h in Headers */ = {isa = PBXBuildFile; fileRef = 41DC2E603E8ADDBF5D189ECBF8C1D466 /* jansson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		345D46E02433C32F69AA7D309F3DFF6F /* jansson_config.h in Headers */ = {isa = PBXBuildFile; fileRef = A4A421133BA3259947279274F053E8DC /* jansson_config.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3655A4014AB25ECBAE29FAF1E7BFD9D1 /* io.h in Headers */ = {isa = PBXBuildFile; fileRef = A079612F4C40AE3A76F87860EBA0D2B3 /* io.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F92C789D26EBC452FF38AA4A02C0461 /* generic.h in Headers */ = {isa = PBXBuildFile; fileRef = A53A9B87AA4C66C0CF6663A0073076F8 /* generic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40D4000787ABFE000516FBB94EC46301 /* hashtable.h in Headers */ = {isa = PBXBuildFile; fileRef = 66190962E6BD5B32A17B4A611E2F501E /* hashtable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		457FF501D99A1711732936211C609B95 /* datum_equal.c in Sources */ = {isa = PBXBuildFile; fileRef = C4C9A3718780C686907853BC2F15F0A3 /* datum_equal.c */; };
+		498FC37D3017D986F48539FE6F8B5E40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		50DB9DB19A380ED87DA138E52AAC6076 /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B181416A79BFE7324C6EE8CC4BEFEA5 /* memory.c */; };
+		546ADD320A5AE163DAF665D1B60895D7 /* datafile.c in Sources */ = {isa = PBXBuildFile; fileRef = E746D66C66B128421016233505401502 /* datafile.c */; };
+		54C6B72FD47973F979D8E763F736219C /* avro_generic_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 75C0A682406A252F5A037291F27A0300 /* avro_generic_internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		561A6D8F8117B038637B665F7201D0D2 /* legacy.h in Headers */ = {isa = PBXBuildFile; fileRef = 360BED5A582887DE22F8101AABF0763D /* legacy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C6B0AE571109DB493FFE24051857226 /* strconv.c in Sources */ = {isa = PBXBuildFile; fileRef = ED1927F09EBB58FC8D27DAD630B4D1C6 /* strconv.c */; };
+		5CD03A94ECDABC313C9D3A06E5C0F41A /* encoding_binary.c in Sources */ = {isa = PBXBuildFile; fileRef = B0BA0D3E86D598E04D1743C9B08DAA51 /* encoding_binary.c */; };
+		5F022CD51F1919B7A517888A0FBBDC47 /* value-read.c in Sources */ = {isa = PBXBuildFile; fileRef = B7E183CB0151EA9517EB51876BE53223 /* value-read.c */; };
+		65FF3A9ABB0D3585A026B517E0D6ED7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		66B103A33F82ACCEBD363FD66E17FDBD /* value-hash.c in Sources */ = {isa = PBXBuildFile; fileRef = B219869DDA6D84F9A5B1F13E0842B95B /* value-hash.c */; };
+		66EDA0E717924AE854F5E1DDA1E22671 /* errors.c in Sources */ = {isa = PBXBuildFile; fileRef = DAB3625F0D4862AA9CAD0A6255E666FC /* errors.c */; };
+		6B9B7DA6ADB682F62783BF366B9CB7F2 /* schema.c in Sources */ = {isa = PBXBuildFile; fileRef = BBB44CAA14E7436F021BCBFBE2EAB207 /* schema.c */; };
+		6BA36202647D8956C750EE52CAE58483 /* datum_read.c in Sources */ = {isa = PBXBuildFile; fileRef = 7C09C7D62D5A59F2A0780164E51DF901 /* datum_read.c */; };
+		6BF6E1079AE8EE7C1ADF5FBAF4F45397 /* value-write.c in Sources */ = {isa = PBXBuildFile; fileRef = C86DF561C71B8D8BA43C7EC4D49B7CCF /* value-write.c */; };
+		6E6FAE2D78057963181F688304AF1B36 /* error.c in Sources */ = {isa = PBXBuildFile; fileRef = BA1F6A691AC8054A46DC5A4433499A38 /* error.c */; };
+		70B57A9C07E9DCBE5D23512FE96067F8 /* Jansson-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E787EB109ECF2E5B15D2146E1CD03A4 /* Jansson-dummy.m */; };
+		723669E9E0717AA45C348A185489BBCD /* hashtable.c in Sources */ = {isa = PBXBuildFile; fileRef = 363A3634C9B753B1C442AF426CAFFE5F /* hashtable.c */; };
+		7430B799A1F09CE092FDD2A50E0996EA /* value-sizeof.c in Sources */ = {isa = PBXBuildFile; fileRef = BB15EA43DFA3182B689A3F5E74713808 /* value-sizeof.c */; };
+		779A0C97401F098CFE65D60AC7B5475F /* pack_unpack.c in Sources */ = {isa = PBXBuildFile; fileRef = 797BBB2AE6AB48A0A1B5792D3EBE6051 /* pack_unpack.c */; };
+		7C67D519A3DA1D0EE358B681D37139F3 /* Pods-HnairAvro-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD83F1776F3720B7273ABD571FCBB7EF /* Pods-HnairAvro-dummy.m */; };
+		8005AF045836A12D9D651F13410583FF /* dump.c in Sources */ = {isa = PBXBuildFile; fileRef = A88D944A208CE7892EEE4EA06D5887A1 /* dump.c */; };
+		8C36B03E6984C276F7F9D5F2C7196C84 /* encoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 66238A18A8352FE161FD52BA8440CF01 /* encoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C78ECB84DB43FF53154216BD934B98A /* data.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B4D89BA896064364112A6A1A1355614 /* data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CDAF11E64D7B42CAB6086A95FB64072 /* generic.c in Sources */ = {isa = PBXBuildFile; fileRef = 36E981F0D655DEB4535C1FFD2179DFF0 /* generic.c */; };
+		8FAEF37DA8755F31ECAE217458F8D6BE /* consume-binary.c in Sources */ = {isa = PBXBuildFile; fileRef = FFF3F35D9416271E0140263C04370D5C /* consume-binary.c */; };
+		96A7EEE11FA75519274919744AB72D8C /* schema.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D2D80309E60BDD0CDA069439B89CE25 /* schema.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B653660CEBF83E55EFC7B02C483F98B /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EB9D57F1224CDF7C941AC2DE73B3549 /* value.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D1B5B04C27F94B56398087A6820F578 /* datum.c in Sources */ = {isa = PBXBuildFile; fileRef = 4C572203D2F5D46F5088A4E72A948369 /* datum.c */; };
+		9F54F429EAC64541135BFC8A414035BA /* avromod.c in Sources */ = {isa = PBXBuildFile; fileRef = E8B3572937FD4E123D9973455EE293DE /* avromod.c */; };
+		9FE9EFBAF17BF21A2686BAA1568057BC /* refcount.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DCC8479B7590AB11FDA32ACCE21309F /* refcount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0E47C452A057DBCE0F56CFC6244961B /* wrapped-buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 59CB3DF7E054E9E565193F759409C1DA /* wrapped-buffer.c */; };
+		A12B555D9899F21478CD7D3A6FCF2BB8 /* utf.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C46EB2677F0399B6C68C882FFB73CF9 /* utf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C43C435F7638C24C08AB4F247B35EF /* allocation.c in Sources */ = {isa = PBXBuildFile; fileRef = 823EBBBE9F23D8F82CAFC2BD783CA54E /* allocation.c */; };
+		A9BC4686724295791855C521D0D9576F /* resolver.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DA353EFBF21DAEA49FDE764A69916AE /* resolver.c */; };
+		A9CA98C1E38852BF73AE82F3B8946C60 /* msstdint.h in Headers */ = {isa = PBXBuildFile; fileRef = B4674FECE4CDB748A8329CD029986FC7 /* msstdint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B27F78E667587E03D39AD28292576F31 /* st.c in Sources */ = {isa = PBXBuildFile; fileRef = E641AA692B4DE58594197414627DB7B0 /* st.c */; };
+		B57939C88BF580DA3FE04D3FF2625656 /* avropipe.c in Sources */ = {isa = PBXBuildFile; fileRef = 1C78D26E8060E0E8BA7F9D4227180A04 /* avropipe.c */; };
+		B5EF7CDF734628DCCBC9B37F4C237F13 /* avro.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EA4F6C3D1519B8B379878341545B07B /* avro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B92284F75CB849A11EF8794FDA96A49D /* codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E5623537CB3DC14CA122D704F3E987 /* codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA55CCD44A416E2B360DF3E5220DC3CA /* value-json.c in Sources */ = {isa = PBXBuildFile; fileRef = 668CCAA9F922499F0427E902C1D0E15D /* value-json.c */; };
+		BFA2F9C128C7483B2BF4DBBDFE75BD28 /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1A95016DF3C32AC6296C58EC384E5 /* string.c */; };
+		C16812921C98A9AFFE5A7A25DF36655A /* resolver.h in Headers */ = {isa = PBXBuildFile; fileRef = B8EBE9521AAC6F474FC2874CBEB9CE29 /* resolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2A84E0862EF1F433B9C395AA7753762 /* Avro-C-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B29B098D991902209244AC521AEBE0 /* Avro-C-dummy.m */; };
+		C3A5AE305EDC2089E4B422032CC515D4 /* basics.h in Headers */ = {isa = PBXBuildFile; fileRef = 273B0283D9839874E06250A01E7DC097 /* basics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C743F01F9A86A5DFF750FDCFEF637724 /* strbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = C254622AC1997F18506A58590AD44E29 /* strbuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9CB4FE4AA82A537199A8E9F8D636E0F /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = 53C31E8CE8DBEE56CD8C8572C4F5DE94 /* map.c */; };
+		D3D31E7D613BEE171F43D2B147C2A963 /* datum_size.c in Sources */ = {isa = PBXBuildFile; fileRef = CB21788253CDA0C8E3EA99A334D1E9C0 /* datum_size.c */; };
+		D45B1936B23B5D8670A219DD434976B7 /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 032C1DB8E8E3967C87C4AF95B7BCBBE2 /* array.c */; };
+		D4AD254D89CA6FC9E840E7F4442FC842 /* msinttypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 17D7E8AB05178BDECF52EFFCA95A0F00 /* msinttypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D76716176D250A15565EF10B2A250EA5 /* consumer.c in Sources */ = {isa = PBXBuildFile; fileRef = 9887CB1AF63E21FBF18405793E9D0884 /* consumer.c */; };
+		D95524B78F4B3EA0669F567EEAF23498 /* value.c in Sources */ = {isa = PBXBuildFile; fileRef = F4AF3A353208BA65789A0E1FE7673751 /* value.c */; };
+		DDBA101ADD53F020E0382166DC473D87 /* strbuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F465423F10A5683858191E5AFA9D2135 /* strbuffer.c */; };
+		E0E698D094A9C4BD9D013A06950D2A13 /* datum.h in Headers */ = {isa = PBXBuildFile; fileRef = 490DE7964EB7BEFAB265FC3C6C96A103 /* datum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23C21135BE5EC917FE83360F705A078 /* datum_value.c in Sources */ = {isa = PBXBuildFile; fileRef = 78D4262FEBD9C1D02702BC26FD529A4C /* datum_value.c */; };
+		E5EA12CBF4D58E433DF7B76D0100EC90 /* resolved-writer.c in Sources */ = {isa = PBXBuildFile; fileRef = 63B7EA146B6DEA16D59FB38F57B1D2B2 /* resolved-writer.c */; };
+		E93BFD47243AABD410522E110649552E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		F3B90499077A3933E027FA0ED5319765 /* errors.h in Headers */ = {isa = PBXBuildFile; fileRef = FC8EF444AE452BA472E23DF3F4AA7CBE /* errors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F492E48E5399DD47713CC6B84A8EB9C8 /* memoize.c in Sources */ = {isa = PBXBuildFile; fileRef = 5E302742BAC89F2EC321B816A59A6F71 /* memoize.c */; };
+		F595243F13EE90D2A84C010462804F88 /* schema_equal.c in Sources */ = {isa = PBXBuildFile; fileRef = 181336996FF4CC1116675551738EA414 /* schema_equal.c */; };
+		F7440D58027CC04A406362F7E4488FBD /* load.c in Sources */ = {isa = PBXBuildFile; fileRef = 0EA92A3A71E0122C0EE940FE7922D4CF /* load.c */; };
+		FDD9D521C713F2084F1C17DE3C2F3DAB /* st.h in Headers */ = {isa = PBXBuildFile; fileRef = A964BFC32767FF5C89541F666812DFD6 /* st.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE0A81290FF360D7E487E6FE06D2B631 /* platform.h in Headers */ = {isa = PBXBuildFile; fileRef = 582478B9F8F23597C642361221816121 /* platform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EA0A240C106CF06DB733CA0047D00D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495A2D6F65F20AEF08511E3C080D3D84;
+			remoteInfo = Jansson;
+		};
+		89546CC22F1B15BD4990FC9C4738B6A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFCB58A88D2FEE1104B95C11069ACD1F;
+			remoteInfo = "Avro-C";
+		};
+		FC4634922DCD657B900C503B692F0701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495A2D6F65F20AEF08511E3C080D3D84;
+			remoteInfo = Jansson;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		032C1DB8E8E3967C87C4AF95B7BCBBE2 /* array.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = array.c; path = lang/c/src/array.c; sourceTree = "<group>"; };
+		0466AF6D74FFE08577D26D98F0029FCA /* Pods-HnairAvro-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HnairAvro-frameworks.sh"; sourceTree = "<group>"; };
+		0A948B896FA7370BF0792583F2D4D527 /* jansson_private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jansson_private.h; path = src/jansson_private.h; sourceTree = "<group>"; };
+		0EA92A3A71E0122C0EE940FE7922D4CF /* load.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = load.c; path = src/load.c; sourceTree = "<group>"; };
+		1499BDFBF980B484517FE0D063061C56 /* io.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = io.c; path = lang/c/src/io.c; sourceTree = "<group>"; };
+		17D7E8AB05178BDECF52EFFCA95A0F00 /* msinttypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = msinttypes.h; path = lang/c/src/avro/msinttypes.h; sourceTree = "<group>"; };
+		181336996FF4CC1116675551738EA414 /* schema_equal.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = schema_equal.c; path = lang/c/src/schema_equal.c; sourceTree = "<group>"; };
+		1C78D26E8060E0E8BA7F9D4227180A04 /* avropipe.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = avropipe.c; path = lang/c/src/avropipe.c; sourceTree = "<group>"; };
+		1C9BB1599631555D30561D53746CE27F /* Pods-HnairAvro-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HnairAvro-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1DCC8479B7590AB11FDA32ACCE21309F /* refcount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = refcount.h; path = lang/c/src/avro/refcount.h; sourceTree = "<group>"; };
+		1EA4F6C3D1519B8B379878341545B07B /* avro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avro.h; path = lang/c/src/avro.h; sourceTree = "<group>"; };
+		1EB9D57F1224CDF7C941AC2DE73B3549 /* value.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = value.h; path = lang/c/src/avro/value.h; sourceTree = "<group>"; };
+		20D2A991A3577474D48E3DC0280319B1 /* libPods-HnairAvro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HnairAvro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		270C1EE18E9354887BBAD854C8636720 /* Pods-HnairAvro-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HnairAvro-resources.sh"; sourceTree = "<group>"; };
+		273B0283D9839874E06250A01E7DC097 /* basics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = basics.h; path = lang/c/src/avro/basics.h; sourceTree = "<group>"; };
+		2C46EB2677F0399B6C68C882FFB73CF9 /* utf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = utf.h; path = src/utf.h; sourceTree = "<group>"; };
+		2D2D80309E60BDD0CDA069439B89CE25 /* schema.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = schema.h; path = lang/c/src/schema.h; sourceTree = "<group>"; };
+		360BED5A582887DE22F8101AABF0763D /* legacy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = legacy.h; path = lang/c/src/avro/legacy.h; sourceTree = "<group>"; };
+		363A3634C9B753B1C442AF426CAFFE5F /* hashtable.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hashtable.c; path = src/hashtable.c; sourceTree = "<group>"; };
+		36E981F0D655DEB4535C1FFD2179DFF0 /* generic.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = generic.c; path = lang/c/src/generic.c; sourceTree = "<group>"; };
+		41DC2E603E8ADDBF5D189ECBF8C1D466 /* jansson.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jansson.h; path = src/jansson.h; sourceTree = "<group>"; };
+		461C4206574D7C4D7F31D792601A0CA2 /* Avro-C-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Avro-C-prefix.pch"; sourceTree = "<group>"; };
+		490DE7964EB7BEFAB265FC3C6C96A103 /* datum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = datum.h; path = lang/c/src/datum.h; sourceTree = "<group>"; };
+		4B0998B07A54CE8AF7930A657C5D8CED /* allocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = allocation.h; path = lang/c/src/avro/allocation.h; sourceTree = "<group>"; };
+		4C572203D2F5D46F5088A4E72A948369 /* datum.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum.c; path = lang/c/src/datum.c; sourceTree = "<group>"; };
+		52E5623537CB3DC14CA122D704F3E987 /* codec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = codec.h; path = lang/c/src/codec.h; sourceTree = "<group>"; };
+		53C31E8CE8DBEE56CD8C8572C4F5DE94 /* map.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = map.c; path = lang/c/src/map.c; sourceTree = "<group>"; };
+		55E67C79E2DCF19E5D6870DA23EA600F /* Jansson.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Jansson.xcconfig; sourceTree = "<group>"; };
+		582478B9F8F23597C642361221816121 /* platform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = platform.h; path = lang/c/src/avro/platform.h; sourceTree = "<group>"; };
+		594B489BC79B4E55DB4C532368BFC25B /* dump.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = dump.h; path = lang/c/src/dump.h; sourceTree = "<group>"; };
+		59CB3DF7E054E9E565193F759409C1DA /* wrapped-buffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "wrapped-buffer.c"; path = "lang/c/src/wrapped-buffer.c"; sourceTree = "<group>"; };
+		5B4D89BA896064364112A6A1A1355614 /* data.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = data.h; path = lang/c/src/avro/data.h; sourceTree = "<group>"; };
+		5C50DB36D6D4119C1A9A2E38774FABED /* avrocat.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = avrocat.c; path = lang/c/src/avrocat.c; sourceTree = "<group>"; };
+		5E302742BAC89F2EC321B816A59A6F71 /* memoize.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = memoize.c; path = lang/c/src/memoize.c; sourceTree = "<group>"; };
+		627D9D46008E95CA8E46E816F124D604 /* Pods-HnairAvro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HnairAvro.release.xcconfig"; sourceTree = "<group>"; };
+		63B7EA146B6DEA16D59FB38F57B1D2B2 /* resolved-writer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "resolved-writer.c"; path = "lang/c/src/resolved-writer.c"; sourceTree = "<group>"; };
+		66190962E6BD5B32A17B4A611E2F501E /* hashtable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hashtable.h; path = src/hashtable.h; sourceTree = "<group>"; };
+		66238A18A8352FE161FD52BA8440CF01 /* encoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = encoding.h; path = lang/c/src/encoding.h; sourceTree = "<group>"; };
+		668CCAA9F922499F0427E902C1D0E15D /* value-json.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "value-json.c"; path = "lang/c/src/value-json.c"; sourceTree = "<group>"; };
+		69C39ECE7741D7ED58D907D5B9F8B6F4 /* utf.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = utf.c; path = src/utf.c; sourceTree = "<group>"; };
+		728889AAC6040E3D375C6F59E950C71E /* consumer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = consumer.h; path = lang/c/src/avro/consumer.h; sourceTree = "<group>"; };
+		73C7A70FF176BD89B93047CF38795B01 /* Jansson-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Jansson-prefix.pch"; sourceTree = "<group>"; };
+		75C0A682406A252F5A037291F27A0300 /* avro_generic_internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avro_generic_internal.h; path = lang/c/src/avro_generic_internal.h; sourceTree = "<group>"; };
+		78D4262FEBD9C1D02702BC26FD529A4C /* datum_value.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_value.c; path = lang/c/src/datum_value.c; sourceTree = "<group>"; };
+		797BBB2AE6AB48A0A1B5792D3EBE6051 /* pack_unpack.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pack_unpack.c; path = src/pack_unpack.c; sourceTree = "<group>"; };
+		79ED4F80196DFD04313593D590BBE32B /* Pods-HnairAvro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HnairAvro.debug.xcconfig"; sourceTree = "<group>"; };
+		79EEA50227D52A02EB451C5E80590B81 /* dump.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = dump.c; path = src/dump.c; sourceTree = "<group>"; };
+		7B181416A79BFE7324C6EE8CC4BEFEA5 /* memory.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = memory.c; path = src/memory.c; sourceTree = "<group>"; };
+		7C09C7D62D5A59F2A0780164E51DF901 /* datum_read.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_read.c; path = lang/c/src/datum_read.c; sourceTree = "<group>"; };
+		7E787EB109ECF2E5B15D2146E1CD03A4 /* Jansson-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Jansson-dummy.m"; sourceTree = "<group>"; };
+		823EBBBE9F23D8F82CAFC2BD783CA54E /* allocation.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = allocation.c; path = lang/c/src/allocation.c; sourceTree = "<group>"; };
+		8DA353EFBF21DAEA49FDE764A69916AE /* resolver.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = resolver.c; path = lang/c/src/resolver.c; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9887CB1AF63E21FBF18405793E9D0884 /* consumer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = consumer.c; path = lang/c/src/consumer.c; sourceTree = "<group>"; };
+		9AA1A95016DF3C32AC6296C58EC384E5 /* string.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = string.c; path = lang/c/src/string.c; sourceTree = "<group>"; };
+		9B6ECAEB8BABAC8F4B9EE13AE8EE77B4 /* resolved-reader.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "resolved-reader.c"; path = "lang/c/src/resolved-reader.c"; sourceTree = "<group>"; };
+		A079612F4C40AE3A76F87860EBA0D2B3 /* io.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = io.h; path = lang/c/src/avro/io.h; sourceTree = "<group>"; };
+		A4A421133BA3259947279274F053E8DC /* jansson_config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jansson_config.h; path = src/jansson_config.h; sourceTree = "<group>"; };
+		A53A9B87AA4C66C0CF6663A0073076F8 /* generic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = generic.h; path = lang/c/src/avro/generic.h; sourceTree = "<group>"; };
+		A6AE8E01EEB2B7590A84D1932B665E7C /* libJansson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJansson.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A849C72589A1EEBE8F413FA87164940E /* avroappend.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = avroappend.c; path = lang/c/src/avroappend.c; sourceTree = "<group>"; };
+		A88D944A208CE7892EEE4EA06D5887A1 /* dump.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = dump.c; path = lang/c/src/dump.c; sourceTree = "<group>"; };
+		A964BFC32767FF5C89541F666812DFD6 /* st.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = st.h; path = lang/c/src/st.h; sourceTree = "<group>"; };
+		A9D2FF256E46B9C16FB849D7E28DBD53 /* value.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = value.c; path = src/value.c; sourceTree = "<group>"; };
+		A9ECA75E02246B1B5FC11CEAC73E2A47 /* Avro-C.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Avro-C.xcconfig"; sourceTree = "<group>"; };
+		AD83F1776F3720B7273ABD571FCBB7EF /* Pods-HnairAvro-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HnairAvro-dummy.m"; sourceTree = "<group>"; };
+		ADA05BFF0B3D3C74BBAA5B8D5A176CEC /* libAvro-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libAvro-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0BA0D3E86D598E04D1743C9B08DAA51 /* encoding_binary.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = encoding_binary.c; path = lang/c/src/encoding_binary.c; sourceTree = "<group>"; };
+		B219869DDA6D84F9A5B1F13E0842B95B /* value-hash.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "value-hash.c"; path = "lang/c/src/value-hash.c"; sourceTree = "<group>"; };
+		B4674FECE4CDB748A8329CD029986FC7 /* msstdint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = msstdint.h; path = lang/c/src/avro/msstdint.h; sourceTree = "<group>"; };
+		B7E183CB0151EA9517EB51876BE53223 /* value-read.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "value-read.c"; path = "lang/c/src/value-read.c"; sourceTree = "<group>"; };
+		B8EBE9521AAC6F474FC2874CBEB9CE29 /* resolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = resolver.h; path = lang/c/src/avro/resolver.h; sourceTree = "<group>"; };
+		BA1F6A691AC8054A46DC5A4433499A38 /* error.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = error.c; path = src/error.c; sourceTree = "<group>"; };
+		BB15EA43DFA3182B689A3F5E74713808 /* value-sizeof.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "value-sizeof.c"; path = "lang/c/src/value-sizeof.c"; sourceTree = "<group>"; };
+		BBB44CAA14E7436F021BCBFBE2EAB207 /* schema.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = schema.c; path = lang/c/src/schema.c; sourceTree = "<group>"; };
+		C2284687D96DFF87B35ED04E032B46E3 /* datum_write.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_write.c; path = lang/c/src/datum_write.c; sourceTree = "<group>"; };
+		C254622AC1997F18506A58590AD44E29 /* strbuffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = strbuffer.h; path = src/strbuffer.h; sourceTree = "<group>"; };
+		C4C9A3718780C686907853BC2F15F0A3 /* datum_equal.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_equal.c; path = lang/c/src/datum_equal.c; sourceTree = "<group>"; };
+		C5CA95986D369C51EB11DC1FF4B124BC /* schema.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = schema.h; path = lang/c/src/avro/schema.h; sourceTree = "<group>"; };
+		C86DF561C71B8D8BA43C7EC4D49B7CCF /* value-write.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "value-write.c"; path = "lang/c/src/value-write.c"; sourceTree = "<group>"; };
+		CB21788253CDA0C8E3EA99A334D1E9C0 /* datum_size.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_size.c; path = lang/c/src/datum_size.c; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D94FBD27A839C7EAC96B6874182FB5A2 /* codec.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = codec.c; path = lang/c/src/codec.c; sourceTree = "<group>"; };
+		DAB3625F0D4862AA9CAD0A6255E666FC /* errors.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = errors.c; path = lang/c/src/errors.c; sourceTree = "<group>"; };
+		DF438C5D9B0E526D4A440AA3C908CBCF /* datum_skip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_skip.c; path = lang/c/src/datum_skip.c; sourceTree = "<group>"; };
+		E2262E15387EB116E36EB0EAA285D776 /* Pods-HnairAvro-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HnairAvro-acknowledgements.plist"; sourceTree = "<group>"; };
+		E641AA692B4DE58594197414627DB7B0 /* st.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = st.c; path = lang/c/src/st.c; sourceTree = "<group>"; };
+		E696D0C6A412105FEBA4572196D327A0 /* avro_private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avro_private.h; path = lang/c/src/avro_private.h; sourceTree = "<group>"; };
+		E746D66C66B128421016233505401502 /* datafile.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datafile.c; path = lang/c/src/datafile.c; sourceTree = "<group>"; };
+		E8B3572937FD4E123D9973455EE293DE /* avromod.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = avromod.c; path = lang/c/src/avromod.c; sourceTree = "<group>"; };
+		E928DE177DDEBE5A6BF4C6EB1D4B657D /* datum_validate.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = datum_validate.c; path = lang/c/src/datum_validate.c; sourceTree = "<group>"; };
+		ED1927F09EBB58FC8D27DAD630B4D1C6 /* strconv.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = strconv.c; path = src/strconv.c; sourceTree = "<group>"; };
+		F465423F10A5683858191E5AFA9D2135 /* strbuffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = strbuffer.c; path = src/strbuffer.c; sourceTree = "<group>"; };
+		F4AF3A353208BA65789A0E1FE7673751 /* value.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = value.c; path = lang/c/src/value.c; sourceTree = "<group>"; };
+		F6B29B098D991902209244AC521AEBE0 /* Avro-C-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Avro-C-dummy.m"; sourceTree = "<group>"; };
+		FC8EF444AE452BA472E23DF3F4AA7CBE /* errors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = errors.h; path = lang/c/src/avro/errors.h; sourceTree = "<group>"; };
+		FFF3F35D9416271E0140263C04370D5C /* consume-binary.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "consume-binary.c"; path = "lang/c/src/consume-binary.c"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		542CF9AFB4F317B0DB91053E8447DC03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65FF3A9ABB0D3585A026B517E0D6ED7C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A67B71B43AF7E3A3E83873D799DC26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				498FC37D3017D986F48539FE6F8B5E40 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60E1323B0B9D712E73F8EA3116FFF084 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E93BFD47243AABD410522E110649552E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		148DD3A6C81653E4D43557E5266178F9 /* Jansson */ = {
+			isa = PBXGroup;
+			children = (
+				79EEA50227D52A02EB451C5E80590B81 /* dump.c */,
+				BA1F6A691AC8054A46DC5A4433499A38 /* error.c */,
+				363A3634C9B753B1C442AF426CAFFE5F /* hashtable.c */,
+				66190962E6BD5B32A17B4A611E2F501E /* hashtable.h */,
+				41DC2E603E8ADDBF5D189ECBF8C1D466 /* jansson.h */,
+				A4A421133BA3259947279274F053E8DC /* jansson_config.h */,
+				0A948B896FA7370BF0792583F2D4D527 /* jansson_private.h */,
+				0EA92A3A71E0122C0EE940FE7922D4CF /* load.c */,
+				7B181416A79BFE7324C6EE8CC4BEFEA5 /* memory.c */,
+				797BBB2AE6AB48A0A1B5792D3EBE6051 /* pack_unpack.c */,
+				F465423F10A5683858191E5AFA9D2135 /* strbuffer.c */,
+				C254622AC1997F18506A58590AD44E29 /* strbuffer.h */,
+				ED1927F09EBB58FC8D27DAD630B4D1C6 /* strconv.c */,
+				69C39ECE7741D7ED58D907D5B9F8B6F4 /* utf.c */,
+				2C46EB2677F0399B6C68C882FFB73CF9 /* utf.h */,
+				A9D2FF256E46B9C16FB849D7E28DBD53 /* value.c */,
+				9FAD71B2E851F2AD18FAB1FF587443DB /* Support Files */,
+			);
+			path = Jansson;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7B7C1507E660B1D3803A28613BE0E261 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3720E559677C201E444337FE938748C /* Avro-C */,
+				148DD3A6C81653E4D43557E5266178F9 /* Jansson */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				7B7C1507E660B1D3803A28613BE0E261 /* Pods */,
+				E719340A4F01D085D24C2CC94B1F96B4 /* Products */,
+				A05654AD472CBABD0212861FBDF09B8E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		90D9A7184B7B1AA521A03BD4CFFB3101 /* Pods-HnairAvro */ = {
+			isa = PBXGroup;
+			children = (
+				1C9BB1599631555D30561D53746CE27F /* Pods-HnairAvro-acknowledgements.markdown */,
+				E2262E15387EB116E36EB0EAA285D776 /* Pods-HnairAvro-acknowledgements.plist */,
+				AD83F1776F3720B7273ABD571FCBB7EF /* Pods-HnairAvro-dummy.m */,
+				0466AF6D74FFE08577D26D98F0029FCA /* Pods-HnairAvro-frameworks.sh */,
+				270C1EE18E9354887BBAD854C8636720 /* Pods-HnairAvro-resources.sh */,
+				79ED4F80196DFD04313593D590BBE32B /* Pods-HnairAvro.debug.xcconfig */,
+				627D9D46008E95CA8E46E816F124D604 /* Pods-HnairAvro.release.xcconfig */,
+			);
+			name = "Pods-HnairAvro";
+			path = "Target Support Files/Pods-HnairAvro";
+			sourceTree = "<group>";
+		};
+		9F0C69ABE4CA5EBFC0C04A02A0D702DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9ECA75E02246B1B5FC11CEAC73E2A47 /* Avro-C.xcconfig */,
+				F6B29B098D991902209244AC521AEBE0 /* Avro-C-dummy.m */,
+				461C4206574D7C4D7F31D792601A0CA2 /* Avro-C-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Avro-C";
+			sourceTree = "<group>";
+		};
+		9FAD71B2E851F2AD18FAB1FF587443DB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				55E67C79E2DCF19E5D6870DA23EA600F /* Jansson.xcconfig */,
+				7E787EB109ECF2E5B15D2146E1CD03A4 /* Jansson-dummy.m */,
+				73C7A70FF176BD89B93047CF38795B01 /* Jansson-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Jansson";
+			sourceTree = "<group>";
+		};
+		A05654AD472CBABD0212861FBDF09B8E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90D9A7184B7B1AA521A03BD4CFFB3101 /* Pods-HnairAvro */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B3720E559677C201E444337FE938748C /* Avro-C */ = {
+			isa = PBXGroup;
+			children = (
+				823EBBBE9F23D8F82CAFC2BD783CA54E /* allocation.c */,
+				4B0998B07A54CE8AF7930A657C5D8CED /* allocation.h */,
+				032C1DB8E8E3967C87C4AF95B7BCBBE2 /* array.c */,
+				1EA4F6C3D1519B8B379878341545B07B /* avro.h */,
+				75C0A682406A252F5A037291F27A0300 /* avro_generic_internal.h */,
+				E696D0C6A412105FEBA4572196D327A0 /* avro_private.h */,
+				A849C72589A1EEBE8F413FA87164940E /* avroappend.c */,
+				5C50DB36D6D4119C1A9A2E38774FABED /* avrocat.c */,
+				E8B3572937FD4E123D9973455EE293DE /* avromod.c */,
+				1C78D26E8060E0E8BA7F9D4227180A04 /* avropipe.c */,
+				273B0283D9839874E06250A01E7DC097 /* basics.h */,
+				D94FBD27A839C7EAC96B6874182FB5A2 /* codec.c */,
+				52E5623537CB3DC14CA122D704F3E987 /* codec.h */,
+				FFF3F35D9416271E0140263C04370D5C /* consume-binary.c */,
+				9887CB1AF63E21FBF18405793E9D0884 /* consumer.c */,
+				728889AAC6040E3D375C6F59E950C71E /* consumer.h */,
+				5B4D89BA896064364112A6A1A1355614 /* data.h */,
+				E746D66C66B128421016233505401502 /* datafile.c */,
+				4C572203D2F5D46F5088A4E72A948369 /* datum.c */,
+				490DE7964EB7BEFAB265FC3C6C96A103 /* datum.h */,
+				C4C9A3718780C686907853BC2F15F0A3 /* datum_equal.c */,
+				7C09C7D62D5A59F2A0780164E51DF901 /* datum_read.c */,
+				CB21788253CDA0C8E3EA99A334D1E9C0 /* datum_size.c */,
+				DF438C5D9B0E526D4A440AA3C908CBCF /* datum_skip.c */,
+				E928DE177DDEBE5A6BF4C6EB1D4B657D /* datum_validate.c */,
+				78D4262FEBD9C1D02702BC26FD529A4C /* datum_value.c */,
+				C2284687D96DFF87B35ED04E032B46E3 /* datum_write.c */,
+				A88D944A208CE7892EEE4EA06D5887A1 /* dump.c */,
+				594B489BC79B4E55DB4C532368BFC25B /* dump.h */,
+				66238A18A8352FE161FD52BA8440CF01 /* encoding.h */,
+				B0BA0D3E86D598E04D1743C9B08DAA51 /* encoding_binary.c */,
+				DAB3625F0D4862AA9CAD0A6255E666FC /* errors.c */,
+				FC8EF444AE452BA472E23DF3F4AA7CBE /* errors.h */,
+				36E981F0D655DEB4535C1FFD2179DFF0 /* generic.c */,
+				A53A9B87AA4C66C0CF6663A0073076F8 /* generic.h */,
+				1499BDFBF980B484517FE0D063061C56 /* io.c */,
+				A079612F4C40AE3A76F87860EBA0D2B3 /* io.h */,
+				360BED5A582887DE22F8101AABF0763D /* legacy.h */,
+				53C31E8CE8DBEE56CD8C8572C4F5DE94 /* map.c */,
+				5E302742BAC89F2EC321B816A59A6F71 /* memoize.c */,
+				17D7E8AB05178BDECF52EFFCA95A0F00 /* msinttypes.h */,
+				B4674FECE4CDB748A8329CD029986FC7 /* msstdint.h */,
+				582478B9F8F23597C642361221816121 /* platform.h */,
+				1DCC8479B7590AB11FDA32ACCE21309F /* refcount.h */,
+				9B6ECAEB8BABAC8F4B9EE13AE8EE77B4 /* resolved-reader.c */,
+				63B7EA146B6DEA16D59FB38F57B1D2B2 /* resolved-writer.c */,
+				8DA353EFBF21DAEA49FDE764A69916AE /* resolver.c */,
+				B8EBE9521AAC6F474FC2874CBEB9CE29 /* resolver.h */,
+				BBB44CAA14E7436F021BCBFBE2EAB207 /* schema.c */,
+				C5CA95986D369C51EB11DC1FF4B124BC /* schema.h */,
+				2D2D80309E60BDD0CDA069439B89CE25 /* schema.h */,
+				181336996FF4CC1116675551738EA414 /* schema_equal.c */,
+				E641AA692B4DE58594197414627DB7B0 /* st.c */,
+				A964BFC32767FF5C89541F666812DFD6 /* st.h */,
+				9AA1A95016DF3C32AC6296C58EC384E5 /* string.c */,
+				F4AF3A353208BA65789A0E1FE7673751 /* value.c */,
+				1EB9D57F1224CDF7C941AC2DE73B3549 /* value.h */,
+				B219869DDA6D84F9A5B1F13E0842B95B /* value-hash.c */,
+				668CCAA9F922499F0427E902C1D0E15D /* value-json.c */,
+				B7E183CB0151EA9517EB51876BE53223 /* value-read.c */,
+				BB15EA43DFA3182B689A3F5E74713808 /* value-sizeof.c */,
+				C86DF561C71B8D8BA43C7EC4D49B7CCF /* value-write.c */,
+				59CB3DF7E054E9E565193F759409C1DA /* wrapped-buffer.c */,
+				9F0C69ABE4CA5EBFC0C04A02A0D702DF /* Support Files */,
+			);
+			path = "Avro-C";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E719340A4F01D085D24C2CC94B1F96B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADA05BFF0B3D3C74BBAA5B8D5A176CEC /* libAvro-C.a */,
+				A6AE8E01EEB2B7590A84D1932B665E7C /* libJansson.a */,
+				20D2A991A3577474D48E3DC0280319B1 /* libPods-HnairAvro.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		64A9C713BA08FB5A24F50EECDD9DE393 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FF74FA911DD65251C9984B60145E264 /* allocation.h in Headers */,
+				B5EF7CDF734628DCCBC9B37F4C237F13 /* avro.h in Headers */,
+				54C6B72FD47973F979D8E763F736219C /* avro_generic_internal.h in Headers */,
+				205DE5934BBCE773A382D46F262413D1 /* avro_private.h in Headers */,
+				C3A5AE305EDC2089E4B422032CC515D4 /* basics.h in Headers */,
+				B92284F75CB849A11EF8794FDA96A49D /* codec.h in Headers */,
+				07E49265E48FA2F4CA45179B544715ED /* consumer.h in Headers */,
+				8C78ECB84DB43FF53154216BD934B98A /* data.h in Headers */,
+				E0E698D094A9C4BD9D013A06950D2A13 /* datum.h in Headers */,
+				0B5BEFE34AC57AE49C170AC141FC1769 /* dump.h in Headers */,
+				8C36B03E6984C276F7F9D5F2C7196C84 /* encoding.h in Headers */,
+				F3B90499077A3933E027FA0ED5319765 /* errors.h in Headers */,
+				3F92C789D26EBC452FF38AA4A02C0461 /* generic.h in Headers */,
+				3655A4014AB25ECBAE29FAF1E7BFD9D1 /* io.h in Headers */,
+				561A6D8F8117B038637B665F7201D0D2 /* legacy.h in Headers */,
+				D4AD254D89CA6FC9E840E7F4442FC842 /* msinttypes.h in Headers */,
+				A9CA98C1E38852BF73AE82F3B8946C60 /* msstdint.h in Headers */,
+				FE0A81290FF360D7E487E6FE06D2B631 /* platform.h in Headers */,
+				9FE9EFBAF17BF21A2686BAA1568057BC /* refcount.h in Headers */,
+				C16812921C98A9AFFE5A7A25DF36655A /* resolver.h in Headers */,
+				261FB7002336CC1C2B49CE59827DAB3C /* schema.h in Headers */,
+				96A7EEE11FA75519274919744AB72D8C /* schema.h in Headers */,
+				FDD9D521C713F2084F1C17DE3C2F3DAB /* st.h in Headers */,
+				9B653660CEBF83E55EFC7B02C483F98B /* value.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1266EDE7B8A7C6B2CF8FEE7D720825 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D4000787ABFE000516FBB94EC46301 /* hashtable.h in Headers */,
+				318185F0D2C41EF316B3415EBB66E3C7 /* jansson.h in Headers */,
+				345D46E02433C32F69AA7D309F3DFF6F /* jansson_config.h in Headers */,
+				15700A858349AFC632275D2C12E318A3 /* jansson_private.h in Headers */,
+				C743F01F9A86A5DFF750FDCFEF637724 /* strbuffer.h in Headers */,
+				A12B555D9899F21478CD7D3A6FCF2BB8 /* utf.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		495A2D6F65F20AEF08511E3C080D3D84 /* Jansson */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEEBE28537D9270EE4705670F466DEB3 /* Build configuration list for PBXNativeTarget "Jansson" */;
+			buildPhases = (
+				7263428A46B0EB4F3FF4BBD2219397B7 /* Sources */,
+				542CF9AFB4F317B0DB91053E8447DC03 /* Frameworks */,
+				8E1266EDE7B8A7C6B2CF8FEE7D720825 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jansson;
+			productName = Jansson;
+			productReference = A6AE8E01EEB2B7590A84D1932B665E7C /* libJansson.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		895556885E1A82D1CEF30E09EA627D8B /* Pods-HnairAvro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7344F1562A7EA79938F110884C8F329 /* Build configuration list for PBXNativeTarget "Pods-HnairAvro" */;
+			buildPhases = (
+				0ACED58012E15A9ED079EE7A0ECF8BED /* Sources */,
+				56A67B71B43AF7E3A3E83873D799DC26 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86F4DA916526AD503C04D8516554022D /* PBXTargetDependency */,
+				F186FDAD4A9D9E4718E49B729D1B1419 /* PBXTargetDependency */,
+			);
+			name = "Pods-HnairAvro";
+			productName = "Pods-HnairAvro";
+			productReference = 20D2A991A3577474D48E3DC0280319B1 /* libPods-HnairAvro.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EFCB58A88D2FEE1104B95C11069ACD1F /* Avro-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F296932B11A7C5C813A354A17D0BAFD3 /* Build configuration list for PBXNativeTarget "Avro-C" */;
+			buildPhases = (
+				6D088A49A80D6A41BE2A28634A05C389 /* Sources */,
+				60E1323B0B9D712E73F8EA3116FFF084 /* Frameworks */,
+				64A9C713BA08FB5A24F50EECDD9DE393 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90D59CE2F3DD3985881A716C677278B0 /* PBXTargetDependency */,
+			);
+			name = "Avro-C";
+			productName = "Avro-C";
+			productReference = ADA05BFF0B3D3C74BBAA5B8D5A176CEC /* libAvro-C.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = E719340A4F01D085D24C2CC94B1F96B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFCB58A88D2FEE1104B95C11069ACD1F /* Avro-C */,
+				495A2D6F65F20AEF08511E3C080D3D84 /* Jansson */,
+				895556885E1A82D1CEF30E09EA627D8B /* Pods-HnairAvro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0ACED58012E15A9ED079EE7A0ECF8BED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C67D519A3DA1D0EE358B681D37139F3 /* Pods-HnairAvro-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D088A49A80D6A41BE2A28634A05C389 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C43C435F7638C24C08AB4F247B35EF /* allocation.c in Sources */,
+				D45B1936B23B5D8670A219DD434976B7 /* array.c in Sources */,
+				C2A84E0862EF1F433B9C395AA7753762 /* Avro-C-dummy.m in Sources */,
+				0961E15BD8223F5A353BF94B9D8B5900 /* avroappend.c in Sources */,
+				2FDB65834BB586D5287CCFFB4181CACB /* avrocat.c in Sources */,
+				9F54F429EAC64541135BFC8A414035BA /* avromod.c in Sources */,
+				B57939C88BF580DA3FE04D3FF2625656 /* avropipe.c in Sources */,
+				0E41E155091015C32F4FDEAD92F96DF6 /* codec.c in Sources */,
+				8FAEF37DA8755F31ECAE217458F8D6BE /* consume-binary.c in Sources */,
+				D76716176D250A15565EF10B2A250EA5 /* consumer.c in Sources */,
+				546ADD320A5AE163DAF665D1B60895D7 /* datafile.c in Sources */,
+				9D1B5B04C27F94B56398087A6820F578 /* datum.c in Sources */,
+				457FF501D99A1711732936211C609B95 /* datum_equal.c in Sources */,
+				6BA36202647D8956C750EE52CAE58483 /* datum_read.c in Sources */,
+				D3D31E7D613BEE171F43D2B147C2A963 /* datum_size.c in Sources */,
+				2076EE01DF9AD77BC505B64FA856BE86 /* datum_skip.c in Sources */,
+				07F0FBA67C210CBA34D6EAE30022C2C9 /* datum_validate.c in Sources */,
+				E23C21135BE5EC917FE83360F705A078 /* datum_value.c in Sources */,
+				145B846F2B0A1ECD7744DB57F1DA834C /* datum_write.c in Sources */,
+				8005AF045836A12D9D651F13410583FF /* dump.c in Sources */,
+				5CD03A94ECDABC313C9D3A06E5C0F41A /* encoding_binary.c in Sources */,
+				66EDA0E717924AE854F5E1DDA1E22671 /* errors.c in Sources */,
+				8CDAF11E64D7B42CAB6086A95FB64072 /* generic.c in Sources */,
+				17F1DAD95057F6BCA5F5DA4432CCB755 /* io.c in Sources */,
+				C9CB4FE4AA82A537199A8E9F8D636E0F /* map.c in Sources */,
+				F492E48E5399DD47713CC6B84A8EB9C8 /* memoize.c in Sources */,
+				13C997725522891E69E7BE4AAB289E66 /* resolved-reader.c in Sources */,
+				E5EA12CBF4D58E433DF7B76D0100EC90 /* resolved-writer.c in Sources */,
+				A9BC4686724295791855C521D0D9576F /* resolver.c in Sources */,
+				6B9B7DA6ADB682F62783BF366B9CB7F2 /* schema.c in Sources */,
+				F595243F13EE90D2A84C010462804F88 /* schema_equal.c in Sources */,
+				B27F78E667587E03D39AD28292576F31 /* st.c in Sources */,
+				BFA2F9C128C7483B2BF4DBBDFE75BD28 /* string.c in Sources */,
+				66B103A33F82ACCEBD363FD66E17FDBD /* value-hash.c in Sources */,
+				BA55CCD44A416E2B360DF3E5220DC3CA /* value-json.c in Sources */,
+				5F022CD51F1919B7A517888A0FBBDC47 /* value-read.c in Sources */,
+				7430B799A1F09CE092FDD2A50E0996EA /* value-sizeof.c in Sources */,
+				6BF6E1079AE8EE7C1ADF5FBAF4F45397 /* value-write.c in Sources */,
+				D95524B78F4B3EA0669F567EEAF23498 /* value.c in Sources */,
+				A0E47C452A057DBCE0F56CFC6244961B /* wrapped-buffer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7263428A46B0EB4F3FF4BBD2219397B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EFE367ACEA350EE4DBD442CBB36C1EE /* dump.c in Sources */,
+				6E6FAE2D78057963181F688304AF1B36 /* error.c in Sources */,
+				723669E9E0717AA45C348A185489BBCD /* hashtable.c in Sources */,
+				70B57A9C07E9DCBE5D23512FE96067F8 /* Jansson-dummy.m in Sources */,
+				F7440D58027CC04A406362F7E4488FBD /* load.c in Sources */,
+				50DB9DB19A380ED87DA138E52AAC6076 /* memory.c in Sources */,
+				779A0C97401F098CFE65D60AC7B5475F /* pack_unpack.c in Sources */,
+				DDBA101ADD53F020E0382166DC473D87 /* strbuffer.c in Sources */,
+				5C6B0AE571109DB493FFE24051857226 /* strconv.c in Sources */,
+				279C5ED49C2FEF5D2CF9AA12B9D5743F /* utf.c in Sources */,
+				1607F730422A6875CBCBB77DFBB11B84 /* value.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86F4DA916526AD503C04D8516554022D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Avro-C";
+			target = EFCB58A88D2FEE1104B95C11069ACD1F /* Avro-C */;
+			targetProxy = 89546CC22F1B15BD4990FC9C4738B6A8 /* PBXContainerItemProxy */;
+		};
+		90D59CE2F3DD3985881A716C677278B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Jansson;
+			target = 495A2D6F65F20AEF08511E3C080D3D84 /* Jansson */;
+			targetProxy = FC4634922DCD657B900C503B692F0701 /* PBXContainerItemProxy */;
+		};
+		F186FDAD4A9D9E4718E49B729D1B1419 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Jansson;
+			target = 495A2D6F65F20AEF08511E3C080D3D84 /* Jansson */;
+			targetProxy = 7EA0A240C106CF06DB733CA0047D00D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		47BEF9D903506B003EA5C2B249729489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		952729ADEF5E8602AB6418B2B6BE5CE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 627D9D46008E95CA8E46E816F124D604 /* Pods-HnairAvro.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF609AFAB3151783684CE0CA77CADAB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79ED4F80196DFD04313593D590BBE32B /* Pods-HnairAvro.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CBCBCE686F8C12E1BB6419025AC9825F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E67C79E2DCF19E5D6870DA23EA600F /* Jansson.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Jansson/Jansson-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D10610AB16912864681A4A8D938783A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E67C79E2DCF19E5D6870DA23EA600F /* Jansson.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Jansson/Jansson-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EF24B83F6A9E428233B54C16D1DEA53D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9ECA75E02246B1B5FC11CEAC73E2A47 /* Avro-C.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Avro-C/Avro-C-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F5BE9C9B794B18D910AF8423AF4342CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9ECA75E02246B1B5FC11CEAC73E2A47 /* Avro-C.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Avro-C/Avro-C-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47BEF9D903506B003EA5C2B249729489 /* Debug */,
+				AAF678CED40D3499169D10F63CA0719E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEEBE28537D9270EE4705670F466DEB3 /* Build configuration list for PBXNativeTarget "Jansson" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10610AB16912864681A4A8D938783A8 /* Debug */,
+				CBCBCE686F8C12E1BB6419025AC9825F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7344F1562A7EA79938F110884C8F329 /* Build configuration list for PBXNativeTarget "Pods-HnairAvro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF609AFAB3151783684CE0CA77CADAB9 /* Debug */,
+				952729ADEF5E8602AB6418B2B6BE5CE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F296932B11A7C5C813A354A17D0BAFD3 /* Build configuration list for PBXNativeTarget "Avro-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5BE9C9B794B18D910AF8423AF4342CA /* Debug */,
+				EF24B83F6A9E428233B54C16D1DEA53D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

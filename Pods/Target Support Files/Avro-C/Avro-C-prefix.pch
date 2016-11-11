@@ -1,0 +1,8 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
+
+#if __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 1050 
+	#define AVRO_NON_ATOMIC_REFCOUNT 1
+#endif
+

@@ -1,0 +1,16 @@
+PODS:
+  - Avro-C (1.7.6):
+    - Jansson (~> 2.5)
+  - Jansson (2.5)
+
+DEPENDENCIES:
+  - Avro-C (~> 1.7.6)
+  - Jansson (~> 2.5)
+
+SPEC CHECKSUMS:
+  Avro-C: f7f2ca6ae8e974d8a184a4ade9db27e32c95d1bf
+  Jansson: eca4c512d1c7dcee7ae9d68d2c803d13f74f88aa
+
+PODFILE CHECKSUM: 591c395ea16c7a2ad243958e86e378a66cebd49d
+
+COCOAPODS: 1.0.1
