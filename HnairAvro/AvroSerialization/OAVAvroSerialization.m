@@ -9,6 +9,36 @@
 #import "OAVAvroSerialization.h"
 #import <avro.h>
 
+//
+//const char numericEncodings[] = {
+//    'c',
+//    'i',
+//    's',
+//    'l',
+//    'q',
+//    'C',
+//    'I',
+//    'S',
+//    'L',
+//    'Q',
+//    'f',
+//    'd',
+//};
+//const size_t sizeEncodings[] = {
+//    sizeof(char),
+//    sizeof(int),
+//    sizeof(short),
+//    sizeof(long),
+//    sizeof(long long),
+//    sizeof(unsigned char),
+//    sizeof(unsigned int),
+//    sizeof(unsigned short),
+//    sizeof(unsigned long),
+//    sizeof(unsigned long long),
+//    sizeof(float),
+//    sizeof(double),
+//};
+
 @interface OAVAvroSerialization ()
 
 @property (nonatomic, strong) NSMutableDictionary *jsonSchemas; // contains NSDictionary
@@ -62,7 +92,7 @@
 }
 
 #pragma mark - Public methods
-
+//转换成Data
 - (NSData *)dataFromJSONObject:(id)jsonObject forSchemaNamed:(NSString *)schemaName
                          error:(NSError * __autoreleasing *)error {
     
@@ -124,7 +154,7 @@
     
     return data;
 }
-
+//转换成JSON
 - (id)JSONObjectFromData:(NSData *)data forSchemaNamed:(NSString *)schemaName
                    error:(NSError * __autoreleasing *)error {
     
@@ -156,6 +186,7 @@
     return jsonValue;
 }
 
+//注册Schema
 - (BOOL)registerSchema:(NSString *)schema error:(NSError * __autoreleasing *)error {
     NSParameterAssert(schema);
     
@@ -184,6 +215,7 @@
             NSDictionary *userInfo = @{NSLocalizedDescriptionKey:NSLocalizedStringFromTable(errorMsg, @"ObjectiveAvro", nil)};
             *error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSPropertyListReadCorruptError
                                      userInfo:userInfo];
+            NSLog(@"%@",errorMsg);
         }
 		return NO;
 	}
@@ -232,10 +264,20 @@
         }
     }
     
+//    if ([name isKindOfClass:[NSArray class]]) {
+//        
+//        avro_schema_t schema = avro_schema_union();
+//        avro_schema_union_append(schema, avro_schema_string());
+//        avro_schema_union_append(schema, avro_schema_null());
+////        
+////        avro_schema_t schema = avro_schema_map(<#const avro_schema_t values#>);
+//        return avro_schema_map_values(schema);
+//    }
+    
     return NULL;
 }
 
-- (avro_datum_t)valueForSchema:(NSDictionary *)schema values:(id)values {
+- (avro_datum_t)valueForSchema:(NSDictionary *)schema values:(id)values{
     avro_datum_t value = NULL;
     
     NSString *type = schema[@"type"];
@@ -245,6 +287,21 @@
         schema = (NSDictionary *)type;
         type = schema[@"type"];
         name = schema[@"name"];
+    }
+    
+    // union
+    if ([type isKindOfClass:[NSArray class]]) {
+        
+        NSArray *enums = [[NSArray alloc] initWithArray:(NSArray *)type];
+        NSLog(@"\nvalues : %@\nenums : %@",values,enums);
+        avro_schema_t schema = avro_schema_union();
+        [enums enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            avro_schema_union_append(schema, [self schemaFromName:obj]);
+        }];
+        NSString *t = [self valueType:values];
+        avro_datum_t datum = [self valueForSchema:@{@"type":t} values:values];
+        avro_datum_t union_datum = avro_union(schema, [self indexType:t types:enums], datum);
+        return union_datum;
     }
     
     if ([type isEqualToString:@"string"]) {
@@ -271,13 +328,16 @@
         avro_schema_t valuesSchema = [self schemaFromName:mapValues];
         avro_schema_t mapSchema = avro_schema_map(valuesSchema);
         value = avro_map(mapSchema);
-        
+//        NSLog(@"values : %@",values);
         [values enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
             id mapValuesBlock = mapValues;
             if ([mapValuesBlock isKindOfClass:[NSString class]]) {
                 mapValuesBlock = @{@"type": mapValues};
+            }else if ([mapValuesBlock isKindOfClass:[NSArray class]]){
+                
             }
             avro_datum_t datum = [self valueForSchema:mapValuesBlock values:obj];
+//            NSLog(@"%@--%@",obj,mapValuesBlock);
             avro_map_set(value, [key cStringUsingEncoding:NSUTF8StringEncoding], datum);
         }];
     } else if ([type isEqualToString:@"record"]) {
@@ -292,9 +352,9 @@
         }
         
         value = avro_record(itemsSchema);
-        
         [schema[@"fields"] enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
             NSString *fieldName = obj[@"name"];
+            
             avro_datum_t fieldValue = [self valueForSchema:obj values:values[fieldName]];
             if (fieldValue) {
                 avro_record_set(value, [fieldName cStringUsingEncoding:NSUTF8StringEncoding], fieldValue);
@@ -313,6 +373,55 @@
     
     return value;
 }
+
+
+
+
+
+
+
+- (NSString *)valueType:(id)value{
+    if([value isKindOfClass:[NSNumber class]]){
+        if (strcmp([value objCType], @encode(int)) == 0){
+            return @"int";
+        }else if (strcmp([value objCType], @encode(float)) == 0){
+            return @"float";
+        }else if (strcmp([value objCType], @encode(double)) == 0){
+            return @"double";
+        }else if (strcmp([value objCType], @encode(char)) == 0){
+            return @"bytes";
+        }else if (strcmp([value objCType], @encode(bool)) == 0 || strcmp([value objCType], @encode(_Bool)) == 0){//A C++ bool or a C99 _Bool
+            return @"boolean";
+        }else {
+            return @"long";
+        }
+    }
+    return @"string";
+}
+- (int)indexType:(id)type types:(NSArray *)types{
+    int index = 0;
+    
+    if ([types containsObject:type]) {
+        index = (int)[types indexOfObject:type];
+    }else{
+        if ([type isEqualToString: @"double"]) {
+            type = @"float";
+        }else if ([type isEqualToString:@"long"]){
+            if ([types containsObject:@"int"]) {
+                type = @"int";
+            }else if ([types containsObject:@"boolean"]){
+                type = @"boolean";
+            }
+        }
+        index = (int)[types indexOfObject:type];
+    }
+    
+    return index;
+}
+
+
+
+
 
 
 @end

@@ -13,11 +13,7 @@
                     "fields": [
                         {
                             "name": "name",
-                            "type": "string"
-                        },
-                        {
-                            "name": "country",
-                            "type": "string"
+                            "type": ["double","string","long"]
                         },
                         {
                             "name": "age",

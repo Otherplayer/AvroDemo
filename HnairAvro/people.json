@@ -1,22 +1,22 @@
 {
     "people": [
         {
-            "name": "Marcelo Fabri",
+            "name": 11.1,
             "country": "Brazil",
             "age": 20
         },
         {
-            "name": "Tim Cook",
+            "name": 22,
             "country": "USA",
             "age": 53
         },
         {
-            "name": "Steve Wozniak",
+            "name": "name3",
             "country": "USA",
             "age": 63
         },
         {
-            "name": "Bill Gates",
+            "name": "name4",
             "country": "USA",
             "age": 58
         }
