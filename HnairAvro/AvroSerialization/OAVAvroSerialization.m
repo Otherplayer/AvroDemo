@@ -295,7 +295,6 @@
                 mapValuesBlock = @{@"type": mapValues};
             }
             avro_datum_t datum = [self valueForSchema:@{@"type":mapValuesBlock} values:obj];
-            [self loginfo:datum];
             avro_map_set(value, [key cStringUsingEncoding:NSUTF8StringEncoding], datum);
         }];
     } else if ([type isEqualToString:@"record"]) {
