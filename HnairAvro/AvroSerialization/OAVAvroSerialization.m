@@ -306,7 +306,7 @@
             }else if ([mapValuesBlock isKindOfClass:[NSArray class]]){
                 
             }
-            avro_datum_t datum = [self valueForSchema:mapValuesBlock values:obj];
+            avro_datum_t datum = [self valueForSchema:@{@"type":mapValuesBlock} values:obj];
             avro_map_set(value, [key cStringUsingEncoding:NSUTF8StringEncoding], datum);
         }];
     } else if ([type isEqualToString:@"record"]) {
@@ -373,6 +373,7 @@
     if ([types containsObject:type]) {
         index = (int)[types indexOfObject:type];
     }else{
+        // 在OC中，默认系统把float,int,boolean类型分别转换成double、long、long
         if ([type isEqualToString: @"double"]) {
             type = @"float";
         }else if ([type isEqualToString:@"long"]){

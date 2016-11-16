@@ -24,28 +24,28 @@ avro_writer_t writer;
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    OAVAvroSerialization *avro = [[OAVAvroSerialization alloc] init];
-    
-//    NSString *personSchema = [self stringFromBundleResource:@"person_schema"];
-    NSString *peopleSchema = [self stringFromBundleResource:@"people_schema"];
-    
-    NSError *error;
-//    BOOL result = [avro registerSchema:personSchema error:&error];
+//    OAVAvroSerialization *avro = [[OAVAvroSerialization alloc] init];
+//    
+////    NSString *personSchema = [self stringFromBundleResource:@"person_schema"];
+//    NSString *peopleSchema = [self stringFromBundleResource:@"people_schema"];
+//    
+//    NSError *error;
+////    BOOL result = [avro registerSchema:personSchema error:&error];
+////    NSLog(@"%d",result);
+//    BOOL result = [avro registerSchema:peopleSchema error:&error];
 //    NSLog(@"%d",result);
-    BOOL result = [avro registerSchema:peopleSchema error:&error];
-    NSLog(@"%d",result);
-
-    
-    
-    NSDictionary *dict = [self JSONObjectFromBundleResource:@"people"];
-    
-    
-    NSData *data = [avro dataFromJSONObject:dict forSchemaNamed:@"People" error:&error];
-    NSLog(@"%@",data);
-    
-    NSDictionary *fromAvro = [avro JSONObjectFromData:data forSchemaNamed:@"People" error:&error];
-    NSLog(@"Error : %@",error);
-    NSLog(@"result : %@",fromAvro);
+//
+//    
+//    
+//    NSDictionary *dict = [self JSONObjectFromBundleResource:@"people"];
+//    
+//    
+//    NSData *data = [avro dataFromJSONObject:dict forSchemaNamed:@"People" error:&error];
+//    NSLog(@"%@",data);
+//    
+//    NSDictionary *fromAvro = [avro JSONObjectFromData:data forSchemaNamed:@"People" error:&error];
+//    NSLog(@"Error : %@",error);
+//    NSLog(@"result : %@",fromAvro);
     
     
     
@@ -123,29 +123,27 @@ avro_writer_t writer;
     
     
     
-////    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}";
-//    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":[\"string\",\"null\"]}}]}";
-////    <06026136 31313131 31313131 31313131 31313131 31313131 31313131 31313104 61610232 06616161 023300>
-////    <06026136 31313131 31313131 31313131 31313131 31313131 31313131 31313104 61610232 06616161 023300>
-//    NSError *error;
-//    OAVAvroSerialization *avro = [[OAVAvroSerialization alloc] init];
-//    BOOL result = [avro registerSchema:schema error:&error];
-//    if (error) {
-//        NSLog(@"%@",error);
-//    }
-//    NSDictionary *dict = @{@"metadata":@{@"a":@"111111111111111111111111111",@"aa":@"2",@"aaa":@"3"}};
-//    NSData *data = [avro dataFromJSONObject:dict forSchemaNamed:@"Header" error:&error];
-//    if (error) {
-//        NSLog(@"%@",error);
-//    }
-//    NSLog(@"%@",data);
-//
-//    
-//    NSDictionary *results = [avro JSONObjectFromData:data forSchemaNamed:@"Header" error:&error];
-//    if (error) {
-//        NSLog(@"%@",error);
-//    }
-//    NSLog(@"%@",results);
+//    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}";
+    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}";
+    NSError *error;
+    OAVAvroSerialization *avro = [[OAVAvroSerialization alloc] init];
+    [avro registerSchema:schema error:&error];
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    NSDictionary *dict = @{@"metadata":@{@"a":@"1",@"aa":@"2",@"aaa":@"3"}};
+    NSData *data = [avro dataFromJSONObject:dict forSchemaNamed:@"Header" error:&error];
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    NSLog(@"%@",data);
+
+    
+    NSDictionary *results = [avro JSONObjectFromData:data forSchemaNamed:@"Header" error:&error];
+    if (error) {
+        NSLog(@"%@",error);
+    }
+    NSLog(@"%@",results);
     
     
 
