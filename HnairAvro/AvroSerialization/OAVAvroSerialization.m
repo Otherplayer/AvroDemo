@@ -235,16 +235,6 @@
         }
     }
     
-//    if ([name isKindOfClass:[NSArray class]]) {
-//        
-//        avro_schema_t schema = avro_schema_union();
-//        avro_schema_union_append(schema, avro_schema_string());
-//        avro_schema_union_append(schema, avro_schema_null());
-////        
-////        avro_schema_t schema = avro_schema_map(<#const avro_schema_t values#>);
-//        return avro_schema_map_values(schema);
-//    }
-    
     return NULL;
 }
 
@@ -268,9 +258,9 @@
         [enums enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             avro_schema_union_append(schema, [self schemaFromName:obj]);
         }];
-        NSString *t = [self valueType:values];
-        avro_datum_t datum = [self valueForSchema:@{@"type":t} values:values];
-        avro_datum_t union_datum = avro_union(schema, [self indexType:t types:enums], datum);
+        NSDictionary *unionInfo = [self valueType:values types:enums];
+        avro_datum_t datum = [self valueForSchema:@{@"type":unionInfo[@"type"]} values:values];
+        avro_datum_t union_datum = avro_union(schema, [unionInfo[@"index"] intValue], datum);
         return union_datum;
     }
     
@@ -303,10 +293,9 @@
             id mapValuesBlock = mapValues;
             if ([mapValuesBlock isKindOfClass:[NSString class]]) {
                 mapValuesBlock = @{@"type": mapValues};
-            }else if ([mapValuesBlock isKindOfClass:[NSArray class]]){
-                
             }
             avro_datum_t datum = [self valueForSchema:@{@"type":mapValuesBlock} values:obj];
+            [self loginfo:datum];
             avro_map_set(value, [key cStringUsingEncoding:NSUTF8StringEncoding], datum);
         }];
     } else if ([type isEqualToString:@"record"]) {
@@ -350,44 +339,65 @@
 
 
 - (NSString *)valueType:(id)value{
+    
+    NSString *type = @"string";
+    
     if([value isKindOfClass:[NSNumber class]]){
         if (strcmp([value objCType], @encode(int)) == 0){
-            return @"int";
+            type = @"int";
         }else if (strcmp([value objCType], @encode(float)) == 0){
-            return @"float";
+            type = @"float";
         }else if (strcmp([value objCType], @encode(double)) == 0){
-            return @"double";
+            type = @"double";
         }else if (strcmp([value objCType], @encode(char)) == 0){
-            return @"bytes";
+            type = @"bytes";
         }else if (strcmp([value objCType], @encode(bool)) == 0 || strcmp([value objCType], @encode(_Bool)) == 0){//A C++ bool or a C99 _Bool
-            return @"boolean";
+            type = @"boolean";
         }else {
-            return @"long";
+            type = @"long";
         }
     }
-    return @"string";
-}
-- (int)indexType:(id)type types:(NSArray *)types{
-    int index = 0;
     
+    return type;
+}
+
+- (NSDictionary *)valueType:(id)value types:(NSArray *)types{
+    
+    NSString *type = [self valueType:value];
+    // 需要判断一下用户提示的Schema里面是否有这个选项,没有的情况下，找相似的
+    NSInteger index = 0;
     if ([types containsObject:type]) {
-        index = (int)[types indexOfObject:type];
+        index = [types indexOfObject:type];
     }else{
-        // 在OC中，默认系统把float,int,boolean类型分别转换成double、long、long
-        if ([type isEqualToString: @"double"]) {
-            type = @"float";
-        }else if ([type isEqualToString:@"long"]){
-            if ([types containsObject:@"int"]) {
+        //如果type是float/double，
+        if ([type isEqualToString:@"float"] || [type isEqualToString:@"double"]) {
+            if ([types containsObject:@"double"]) {
+                type = @"double";
+                index = [types indexOfObject:type];
+            }else if ([types containsObject:@"float"]){
+                type = @"float";
+                index = [types indexOfObject:type];
+            }
+        }else if ([type isEqualToString:@"int"] || [type isEqualToString:@"long"] || [type isEqualToString:@"boolean"]){
+            if ([types containsObject:@"long"]) {
+                type = @"long";
+                index = [types indexOfObject:type];
+            }else if ([types containsObject:@"int"]){
                 type = @"int";
+                index = [types indexOfObject:type];
             }else if ([types containsObject:@"boolean"]){
                 type = @"boolean";
+                index = [types indexOfObject:type];
             }
         }
-        index = (int)[types indexOfObject:type];
     }
     
-    return index;
+    return @{@"type":type,@"index":@(index)};
 }
+
+
+
+
 - (void)loginfo:(avro_datum_t)datum{
     char  *json = NULL;
     avro_datum_to_json(datum, 1, &json);

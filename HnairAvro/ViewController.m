@@ -124,14 +124,14 @@ avro_writer_t writer;
     
     
 //    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}";
-    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}";
+    NSString *schema = @"{\"type\":\"record\",\"name\":\"Header\",\"fields\":[{\"name\":\"metadata\",\"type\":{\"type\":\"map\",\"values\":[\"string\",\"long\",\"float\"]}}]}";
     NSError *error;
     OAVAvroSerialization *avro = [[OAVAvroSerialization alloc] init];
     [avro registerSchema:schema error:&error];
     if (error) {
         NSLog(@"%@",error);
     }
-    NSDictionary *dict = @{@"metadata":@{@"a":@"1",@"aa":@"2",@"aaa":@"3"}};
+    NSDictionary *dict = @{@"metadata":@{@"a":@"1",@"aa":@2.233,@"aaa":@3}};
     NSData *data = [avro dataFromJSONObject:dict forSchemaNamed:@"Header" error:&error];
     if (error) {
         NSLog(@"%@",error);
@@ -144,7 +144,7 @@ avro_writer_t writer;
         NSLog(@"%@",error);
     }
     NSLog(@"%@",results);
-    
+//    
     
 
 //    test_map();
