@@ -9,35 +9,6 @@
 #import "OAVAvroSerialization.h"
 #import <avro.h>
 
-//
-//const char numericEncodings[] = {
-//    'c',
-//    'i',
-//    's',
-//    'l',
-//    'q',
-//    'C',
-//    'I',
-//    'S',
-//    'L',
-//    'Q',
-//    'f',
-//    'd',
-//};
-//const size_t sizeEncodings[] = {
-//    sizeof(char),
-//    sizeof(int),
-//    sizeof(short),
-//    sizeof(long),
-//    sizeof(long long),
-//    sizeof(unsigned char),
-//    sizeof(unsigned int),
-//    sizeof(unsigned short),
-//    sizeof(unsigned long),
-//    sizeof(unsigned long long),
-//    sizeof(float),
-//    sizeof(double),
-//};
 
 @interface OAVAvroSerialization ()
 
@@ -293,7 +264,6 @@
     if ([type isKindOfClass:[NSArray class]]) {
         
         NSArray *enums = [[NSArray alloc] initWithArray:(NSArray *)type];
-        NSLog(@"\nvalues : %@\nenums : %@",values,enums);
         avro_schema_t schema = avro_schema_union();
         [enums enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             avro_schema_union_append(schema, [self schemaFromName:obj]);
@@ -305,7 +275,8 @@
     }
     
     if ([type isEqualToString:@"string"]) {
-        value = avro_string([values cStringUsingEncoding:NSUTF8StringEncoding]);
+        // 此处强转，防止类型是String，value是其它类型时引起的问题
+        value = avro_string([[NSString stringWithFormat:@"%@",values] cStringUsingEncoding:NSUTF8StringEncoding]);
     } else if ([type isEqualToString:@"float"]) {
         value = avro_float([values floatValue]);
     } else if ([type isEqualToString:@"double"]) {
@@ -328,7 +299,6 @@
         avro_schema_t valuesSchema = [self schemaFromName:mapValues];
         avro_schema_t mapSchema = avro_schema_map(valuesSchema);
         value = avro_map(mapSchema);
-//        NSLog(@"values : %@",values);
         [values enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
             id mapValuesBlock = mapValues;
             if ([mapValuesBlock isKindOfClass:[NSString class]]) {
@@ -337,7 +307,6 @@
                 
             }
             avro_datum_t datum = [self valueForSchema:mapValuesBlock values:obj];
-//            NSLog(@"%@--%@",obj,mapValuesBlock);
             avro_map_set(value, [key cStringUsingEncoding:NSUTF8StringEncoding], datum);
         }];
     } else if ([type isEqualToString:@"record"]) {
@@ -418,7 +387,11 @@
     
     return index;
 }
-
+- (void)loginfo:(avro_datum_t)datum{
+    char  *json = NULL;
+    avro_datum_to_json(datum, 1, &json);
+    NSLog(@"\n-----BEGIN-----\n%s\n-----END-----",json);
+}
 
 
 
