@@ -132,6 +132,7 @@ avro_writer_t writer;
         NSLog(@"%@",error);
     }
     NSDictionary *dict = @{@"metadata":@{@"a":@"1",@"aa":@2.233,@"aaa":@3}};
+//  NSDictionary *dict = @{@"metadata":@{@"a":@{@"a":@[@"1",@"2",@"3"]}}};
     NSData *data = [avro dataFromJSONObject:dict forSchemaNamed:@"Header" error:&error];
     if (error) {
         NSLog(@"%@",error);
